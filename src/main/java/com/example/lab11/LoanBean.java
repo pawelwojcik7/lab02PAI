@@ -33,8 +33,12 @@ public class LoanBean implements Serializable{
         this.ileRat = ileRat;
     }
 
-    public double getRata(Double k, Double p, Double n){
-        double wynik= (k * p)/(1-(1/(pow((1+p),n))));
-        return wynik;
+    public String getRata(){
+        Double pr = oprocentowanie/1200;
+        Double licznik=kwota*(pr);
+        Double mianownik= 1-(1/pow((1+pr),ileRat));
+        Double wynik= licznik/mianownik;
+        String res = String.valueOf(wynik);
+        return res;
     }
 }

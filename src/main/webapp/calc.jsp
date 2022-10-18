@@ -48,7 +48,10 @@ String date = dateFormat.format(now);
         pr = Double.parseDouble(request.getParameter("oprocentowanie"));
         n = Double.parseDouble(request.getParameter("ileRat"));
         p = pr/12;
-        wynik = (k * p)/(1-(1/(pow((1+p),n))));
+
+        Double licznik=k*p;
+        Double mianownik= 1-(1/pow((1+p),n));
+        Double wynik = licznik/mianownik;
         DecimalFormat df = new DecimalFormat("#.00");
         String rata = df.format(wynik);
         res = rata;

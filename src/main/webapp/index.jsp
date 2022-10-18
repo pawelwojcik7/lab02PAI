@@ -10,6 +10,7 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 <br>
-<a href="calc.jsp">calc.jsp</a>
+<a href="calc.jsp">calc.jsp</a><br>
+<a href="calcWithBean.jsp">calcWithBean.jsp</a>
 </body>
 </html>
