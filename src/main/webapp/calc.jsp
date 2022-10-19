@@ -42,12 +42,11 @@ String date = dateFormat.format(now);
         Double pr;
         Double n;
         Double p;
-        Double wynik;
 
         k = Double.parseDouble(request.getParameter("kwota"));
         pr = Double.parseDouble(request.getParameter("oprocentowanie"));
         n = Double.parseDouble(request.getParameter("ileRat"));
-        p = pr/12;
+        p = pr/1200;
 
         Double licznik=k*p;
         Double mianownik= 1-(1/pow((1+p),n));
@@ -56,7 +55,8 @@ String date = dateFormat.format(now);
         String rata = df.format(wynik);
         res = rata;
     }
-    catch (Exception e){}
+    catch (Exception e){
+    }
     out.println("Rata:"+res);
 //   out.println(rata);
 }
