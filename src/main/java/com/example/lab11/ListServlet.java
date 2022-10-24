@@ -37,6 +37,7 @@ public class ListServlet extends HttpServlet {
 
         ResultSet  rs = statement.executeQuery(query);
         List<CountryBean> list = new ArrayList<>();
+        PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
         while (rs.next()) {
             CountryBean bean = CountryBean.builder()
@@ -48,7 +49,8 @@ public class ListServlet extends HttpServlet {
         }
 
         session.setAttribute("list", list);
-        response.sendRedirect("countryBean.jsp");
+       // session.setAttribute("writer", out);
+       response.sendRedirect("countryBean.jsp");
 
     }
 

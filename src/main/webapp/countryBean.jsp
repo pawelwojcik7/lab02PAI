@@ -3,6 +3,7 @@
 <%@ page import="javax.servlet.http.HttpServletRequest" %>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="com.example.lab11.*" %>
 <%@ page import="java.util.List" %>
 
 
@@ -17,10 +18,8 @@
 <%
    ArrayList<CountryBean> list = (ArrayList<CountryBean>)session.getAttribute("list");
    for(CountryBean country:list){
-   PrintWriter out = new
-
+   out.print(country.getName());
    }
-
 %>
 
 </body>
