@@ -12,5 +12,6 @@
 <br>
 <a href="calc.jsp">calc.jsp</a><br>
 <a href="calcWithBean.jsp">calcWithBean.jsp</a>
+<a href="ListServlet">ListServlet</a>
 </body>
 </html>

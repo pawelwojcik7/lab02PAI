@@ -3,13 +3,8 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="static java.lang.Math.pow" %>
-<%@ page import="java.text.DecimalFormat" %><%--
-  Created by IntelliJ IDEA.
-  User: kubas
-  Date: 18.10.2022
-  Time: 12:13
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.text.DecimalFormat" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
