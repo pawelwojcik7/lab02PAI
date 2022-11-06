@@ -11,7 +11,7 @@
 <a href="hello-servlet">Hello Servlet</a>
 <br>
 <a href="calc.jsp">calc.jsp</a><br>
-<a href="calcWithBean.jsp">calcWithBean.jsp</a>
+<a href="calcWithBean.jsp">calcWithBean.jsp</a><br>
 <a href="ListServlet">ListServlet</a>
 </body>
 </html>

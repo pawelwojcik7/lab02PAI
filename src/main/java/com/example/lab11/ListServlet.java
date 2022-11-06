@@ -17,40 +17,38 @@ import java.util.List;
 @WebServlet(name = "ListServlet", urlPatterns = {"/ListServlet"})
 public class ListServlet extends HttpServlet {
 
-    private Class<?> aClass;
-    private Connection connection;
-    private Statement statement;
+    private final Statement statement;
 
-    //language=SQl
+    //language=sql
     private static final String query = "SELECT * FROM Country WHERE Continent = 'Europe'";
 
     @SneakyThrows
     public ListServlet() {
 
-        this.aClass = Class.forName("com.mysql.cj.jdbc.Driver");
-        this.connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/world?serverTimezone=UTC", "root", "");
-        this.statement = this.connection.createStatement();
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/world?serverTimezone=UTC", "root", "");
+        this.statement = connection.createStatement();
 
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 
-        ResultSet  rs = statement.executeQuery(query);
-        List<CountryBean> list = new ArrayList<>();
-        PrintWriter out = response.getWriter();
-        HttpSession session = request.getSession();
+        ResultSet rs = statement.executeQuery(query);
+        HttpSession session = request.getSession(true);
+        CountryBean country;
+        ArrayList<CountryBean> list = new ArrayList<CountryBean>();
         while (rs.next()) {
-            CountryBean bean = CountryBean.builder()
-                    .code(rs.getString("code"))
-                    .name(rs.getString("name"))
-                    .population(rs.getLong("population"))
-                    .build();
-            list.add(bean);
-        }
+            country = new CountryBean();
+            //pobranie danych i przypisanie ich do CountryBean
+            country.setName(rs.getString("name"));
+            country.setCode(rs.getString("code"));
+            country.setPopulation(rs.getLong("population"));
+            country.setSurfaceArea(rs.getLong("surfaceArea"));
+            list.add(country);
 
+        }
         session.setAttribute("list", list);
-       // session.setAttribute("writer", out);
-       response.sendRedirect("countryBean.jsp");
+        response.sendRedirect("countryBean.jsp");
 
     }
 
