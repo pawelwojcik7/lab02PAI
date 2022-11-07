@@ -8,6 +8,6 @@
 <p>Pojawił się następujący błąd:
   <%= exception.getMessage() %>. <br />
 </p>
-<a href="calcWithBean.jsp">Powrot do kalkulatora</a>
+<a href="index.jsp">Strona glowna</a>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <%@ page import="com.example.lab11.CountryBean" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="errorPage.jsp"%>
 <html>
 <head>
   <title>Details of Country</title>
